@@ -15,6 +15,7 @@ gem 'sqlite3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'prmd'
 end
 
 group :development do
