@@ -15,7 +15,7 @@ API to return list of Japanese era names.
 
 ### <a name="link-GET-ja_era-/ja_eras">JaEra List</a>
 
-List existing ja_eras.
+List existing Japanese era names.
 
 ```
 GET /ja_eras

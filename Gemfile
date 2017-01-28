@@ -16,6 +16,7 @@ gem 'sqlite3'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'prmd'
+  gem 'rack-json_schema'
 end
 
 group :development do
@@ -26,5 +27,7 @@ group :development do
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'rspec'
+  gem 'rspec-json_matcher'
 end

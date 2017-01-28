@@ -29,7 +29,7 @@ definitions:
     - "$ref": "/schemata/ja_era#/definitions/code"
     - "$ref": "/schemata/ja_era#/definitions/name"
 links:
-- description: List existing ja_eras.
+- description: List existing Japanese era names.
   href: "/ja_eras"
   method: GET
   rel: instances
