@@ -1,0 +1,78 @@
+{
+  "$schema": "http://interagent.github.io/interagent-hyper-schema",
+  "type": [
+    "object"
+  ],
+  "definitions": {
+    "ja_era": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "JaEra",
+      "description": "API to return list of Japanese era names.",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "code": {
+          "description": "unique identifier of Japanese era",
+          "example": 1,
+          "readOnly": true,
+          "type": [
+            "integer"
+          ]
+        },
+        "name": {
+          "description": "unique name of Japanese era",
+          "example": "明治",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "start_date": {
+          "description": "date the era started",
+          "example": "1868-01-25",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ja_era/definitions/code"
+            },
+            {
+              "$ref": "#/definitions/ja_era/definitions/name"
+            }
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "List existing Japanese era names.",
+          "href": "/ja_eras",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        }
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/ja_era/definitions/code"
+        },
+        "name": {
+          "$ref": "#/definitions/ja_era/definitions/name"
+        },
+        "start_date": {
+          "$ref": "#/definitions/ja_era/definitions/start_date"
+        }
+      }
+    }
+  },
+  "properties": {
+    "ja_era": {
+      "$ref": "#/definitions/ja_era"
+    }
+  }
+}

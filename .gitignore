@@ -25,3 +25,8 @@
 # vim setting.
 .*.swp
 .vimprojects
+
+# json-schema setting.
+/schemata/json/*
+!/schemata/json/.keep
+!/schemata/yml/.keep
