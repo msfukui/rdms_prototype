@@ -12,12 +12,12 @@ gem 'puma', '~> 3.0'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 gem 'rails', '~> 5.0.1'
-gem 'sqlite3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'prmd'
   gem 'rack-json_schema'
+  gem 'sqlite3'
 end
 
 group :development do
