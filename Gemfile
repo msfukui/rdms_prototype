@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -30,4 +31,9 @@ group :test do
   gem 'factory_girl_rails'
   gem 'rspec'
   gem 'rspec-json_matcher'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
