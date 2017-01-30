@@ -10,7 +10,8 @@ end
 gem 'active_model_serializers'
 
 gem 'puma', '~> 3.0'
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS),
+# making cross-origin AJAX possible
 # gem 'rack-cors'
 gem 'rails', '~> 5.0.1'
 
@@ -29,6 +30,7 @@ group :development do
 end
 
 group :test do
+  gem 'coveralls', require: false
   gem 'factory_girl_rails'
   gem 'rspec'
   gem 'rspec-json_matcher'
