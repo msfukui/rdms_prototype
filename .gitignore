@@ -30,3 +30,6 @@
 /schemata/json/*
 !/schemata/json/.keep
 !/schemata/yml/.keep
+
+# coverage setting.
+/coverage/*
