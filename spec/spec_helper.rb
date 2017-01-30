@@ -97,12 +97,10 @@ RSpec.configure do |config|
   # Kernel.srand config.seed
 end
 
-if ENV['CI']
-  require 'coveralls'
-  Coveralls.wear!
+require 'coveralls'
+Coveralls.wear!
 
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-    Coveralls::SimpleCov::Formatter
-  ]
-  SimpleCov.start
-end
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+  Coveralls::SimpleCov::Formatter
+)
+SimpleCov.start

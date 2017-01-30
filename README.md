@@ -4,6 +4,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/msfukui/rdms_prototype/badge.svg?branch=master)](https://coveralls.io/github/msfukui/rdms_prototype?branch=master)
 
+[![Code Climate](https://codeclimate.com/github/msfukui/rdms_prototype/badges/gpa.svg)](https://codeclimate.com/github/msfukui/rdms_prototype)
+
 Resource Data Management System.
 
 (Alphalpha prototype product.)
