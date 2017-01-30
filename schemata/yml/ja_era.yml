@@ -1,7 +1,7 @@
 ---
 "$schema": http://json-schema.org/draft-04/hyper-schema
 title: JaEra
-description: API to return list of Japanese era names.
+description: API to return list of Japanese era code and names. (JISX0301)
 stability: prototype
 strictProperties: true
 type:
