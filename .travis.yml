@@ -1,11 +1,18 @@
 language: ruby
-bundler_args: --jobs=2
+bundler_args: "--jobs=2"
 sudo: false
 cache: bundler
 before_script:
-  - "bundle exec rails db:migrate"
-  - "bundle exec rake schema:combine"
-  - "bundle exec rake schema:verify"
-  - "bundle exec rake schema:doc"
+- bundle exec rails db:migrate
+- bundle exec rake schema:combine
+- bundle exec rake schema:verify
+- bundle exec rake schema:doc
 script:
-  - "bundle exec rake spec"
+- bundle exec rake spec
+deploy:
+  provider: heroku
+  api_key:
+    secure: sCF3a1fTisMunghJKArbpmnwW6pGiFDHPTBY9lNi4fVifEG1IDNia84ny/iUcb8oUviCwYNcYqVzi4IEoHgj1KVvOUa/WMd7tkWrfVFQk0tVG5v7agwgr6tArljZnlaEfm5QkHQFFTSbX2AK1uGn5XL/E7ALUnqixScuytcgJMdjbw8GuRbpz0bQ3Rw6ABnlutKt9iGDwRyZ5VH7qkNu+KxI3uxpNp+XHhpjKbSvf0Hi5Wryzjm6s8iaoH4Dlg7ajWEsWgeH2yR2jAMGoxM5TjWptEPyTPgpyQsormsoeiK3hPwKQqyVPy8stjKjgEkjtyPPzgxAMyf7va/7AC922mMq4yyeIcZ2iHVlA1vpP5HeL/4Mnp2MxPHA/TKm/abhWt/PB2hhN2oDEWwj8N+MkLIotm+Rt3oNl97h3ln8/WBX/1CzR3C+n/NCd1J9FJdYCV9hxpM+D+VRDD6On7YA066BV8gMSdL4RbmcAqpPo/aDmKXGbPn6qzvwjpsoMYWuP9sBFNzq7q8Tp/pBk/ki4aQfMsw3JxLREqN2vYEoxLwIAGZLXGm9d520P7vLL8X4hwZ4PiN7TAtaUWgJEBXGn5Zpk8YRIk9EJDTHWwScwEZfkyM11+hONyflAbWHQ4s27Qb1A00rvuR30LDAsd274g9TTTkoATrsHAzeQ8xy/l8=
+  app: rdms-prototype
+  on:
+    repo: msfukui/rdms_prototype
