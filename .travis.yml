@@ -1,8 +1,11 @@
 language: ruby
 bundler_args: --jobs=2
-#sudo: false
-#before_script: 
-#  - "RAILS_ENV=test bundle exec rails db:setup"
+sudo: false
+before_script:
+  - "bundle exec rails db:setup"
+  - "bundle exec rake schema:combine"
+  - "bundle exec rake schema:verify"
+  - "bundle exec rake schema:doc"
 script:
   - "bundle exec rake spec"
-#cache: bundler
+cache: bundler

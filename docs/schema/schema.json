@@ -1,5 +1,5 @@
 {
-  "$schema": "http://interagent.github.io/interagent-hyper-schema",
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
   "type": [
     "object"
   ],
@@ -143,5 +143,14 @@
     "prefecture": {
       "$ref": "#/definitions/prefecture"
     }
-  }
+  },
+  "title": "RDMS's API JSON Schema",
+  "description": "In this schema file, we represents the public interface of Resource Data Management System's API in JSON Hyper Schema draft v4.",
+  "id": "rdms-ping",
+  "links": [
+    {
+      "href": "https://rdms-prototype.heroku.com",
+      "rel": "self"
+    }
+  ]
 }

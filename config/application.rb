@@ -18,14 +18,20 @@ module RdmsPrototype
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
 
-    system('bundle exec prmd combine schemata/yml/* > schemata/schema.json')
-    schema = JSON.parse(File.read("#{Rails.root}/schemata/schema.json"))
+    json_schema_file = "#{Rails.root}/docs/schema/schemata/schema.json"
 
-    config.middleware.use Rack::JsonSchema::ErrorHandler
-    config.middleware.use Rack::JsonSchema::RequestValidation, schema: schema
+    if File.exist?(json_schema_file)
+      schema = JSON.parse(File.read(json_schema_file))
 
-    if ENV['RAILS_ENV'] == 'test'
-      config.middleware.use Rack::JsonSchema::ResponseValidation, schema: schema
+      config.middleware.use Rack::JsonSchema::ErrorHandler
+      config.middleware.use Rack::JsonSchema::RequestValidation, schema: schema
+
+      if ENV['RAILS_ENV'] == 'test'
+        config.middleware.use(
+          Rack::JsonSchema::ResponseValidation,
+          schema: schema
+        )
+      end
     end
   end
 end
