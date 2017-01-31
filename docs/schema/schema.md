@@ -29,7 +29,7 @@ GET /ja_eras
 #### Curl Example
 
 ```bash
-$ curl -n https://rdms-prototype.heroku.com/ja_eras
+$ curl -n https://rdms-prototype.herokuapp.com/ja_eras
 ```
 
 
@@ -60,7 +60,7 @@ API to return list of Prefecture code and names set. (JISX0401)
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
-| **code** | *string* | unique identifier of Prefecture. | `1` |
+| **code** | *string* | unique identifier of Prefecture. | `"01"` |
 | **code_bo** | *integer* | unique identifier of Prefecture, using bo. | `1` |
 | **name** | *string* | unique name of Prefecture | `"北海道"` |
 
@@ -76,7 +76,7 @@ GET /prefectures
 #### Curl Example
 
 ```bash
-$ curl -n https://rdms-prototype.heroku.com/prefectures
+$ curl -n https://rdms-prototype.herokuapp.com/prefectures
 ```
 
 
@@ -89,7 +89,7 @@ HTTP/1.1 200 OK
 ```json
 [
   {
-    "code": 1,
+    "code": "01",
     "code_bo": 1,
     "name": "北海道"
   }
