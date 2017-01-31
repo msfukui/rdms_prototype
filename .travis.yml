@@ -3,7 +3,9 @@ bundler_args: --jobs=2
 sudo: false
 cache: bundler
 before_script:
-  - "bundle exec rails db:setup"
+  - "bundle exec rails db:migrate"
   - "bundle exec rake schema:combine"
   - "bundle exec rake schema:verify"
   - "bundle exec rake schema:doc"
+script:
+  - "bundle exec rake spec"
