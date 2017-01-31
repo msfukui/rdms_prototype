@@ -27,9 +27,9 @@
 .vimprojects
 
 # json-schema setting.
-/schemata/json/*
-!/schemata/json/.keep
-!/schemata/yml/.keep
+/docs/schema/schemata/json/*
+!/docs/schema/schemata/json/.keep
+!/docs/schema/schemata/yml/.keep
 
 # coverage setting.
 /coverage/*
