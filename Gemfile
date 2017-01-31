@@ -19,12 +19,12 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'prmd'
   gem 'rack-json_schema'
+  gem 'rspec-rails'
   gem 'sqlite3'
 end
 
 group :development do
   gem 'listen', '~> 3.0.5'
-  gem 'rspec-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
