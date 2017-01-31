@@ -29,7 +29,7 @@ GET /ja_eras
 #### Curl Example
 
 ```bash
-$ curl -n https://rdms-prototype.heroku.com/ja_eras
+$ curl -n https://rdms-prototype.herokuapp.com/ja_eras
 ```
 
 
@@ -76,7 +76,7 @@ GET /prefectures
 #### Curl Example
 
 ```bash
-$ curl -n https://rdms-prototype.heroku.com/prefectures
+$ curl -n https://rdms-prototype.herokuapp.com/prefectures
 ```
 
 

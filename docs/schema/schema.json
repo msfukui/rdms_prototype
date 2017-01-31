@@ -146,10 +146,10 @@
   },
   "title": "RDMS's API JSON Schema",
   "description": "In this schema file, we represents the public interface of Resource Data Management System's API in JSON Hyper Schema draft v4.",
-  "id": "rdms-ping",
+  "id": "rdms-prototype",
   "links": [
     {
-      "href": "https://rdms-prototype.heroku.com",
+      "href": "https://rdms-prototype.herokuapp.com",
       "rel": "self"
     }
   ]
