@@ -81,7 +81,7 @@
       "definitions": {
         "code": {
           "description": "unique identifier of Prefecture.",
-          "example": 1,
+          "example": "01",
           "readOnly": true,
           "type": [
             "string"

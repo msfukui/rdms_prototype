@@ -9,7 +9,7 @@ type:
 definitions:
   code:
     description: unique identifier of Prefecture.
-    example: 01
+    example: '01'
     readOnly: true
     type:
     - string
