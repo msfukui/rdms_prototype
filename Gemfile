@@ -9,6 +9,8 @@ end
 
 gem 'active_model_serializers'
 
+gem 'prmd'
+
 gem 'puma', '~> 3.0'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS),
 # making cross-origin AJAX possible
@@ -17,7 +19,6 @@ gem 'rails', '~> 5.0.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'prmd'
   gem 'rack-json_schema'
   gem 'rspec-rails'
   gem 'sqlite3'
