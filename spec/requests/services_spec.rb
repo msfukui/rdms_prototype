@@ -16,7 +16,7 @@ RSpec.describe 'Services', type: :request do
         [
           code: 'cat',
           name: 'にゃんにゃん',
-          start_date: '2010-03-01',
+          start_date: '2012-02-01',
           end_date: '2999-12-31'
         ]
       )
