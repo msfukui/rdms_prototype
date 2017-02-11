@@ -109,6 +109,9 @@
               "$ref": "#/definitions/prefecture/definitions/code"
             },
             {
+              "$ref": "#/definitions/prefecture/definitions/code_bo"
+            },
+            {
               "$ref": "#/definitions/prefecture/definitions/name"
             }
           ]
@@ -134,6 +137,81 @@
           "$ref": "#/definitions/prefecture/definitions/name"
         }
       }
+    },
+    "service": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Service",
+      "description": "API to return list of Service code and names, is defined to custom settings.",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "code": {
+          "description": "unique identifier of Service",
+          "example": "cat",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of Service",
+          "example": "にゃんにゃん",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "start_date": {
+          "description": "date the service started",
+          "example": "2010-03-01",
+          "type": [
+            "string"
+          ]
+        },
+        "end_date": {
+          "description": "date the service ended",
+          "example": "2999-12-31",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/service/definitions/code"
+            },
+            {
+              "$ref": "#/definitions/service/definitions/name"
+            }
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "List existing Service names.",
+          "href": "/services",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        }
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/service/definitions/code"
+        },
+        "name": {
+          "$ref": "#/definitions/service/definitions/name"
+        },
+        "start_date": {
+          "$ref": "#/definitions/service/definitions/start_date"
+        },
+        "end_date": {
+          "$ref": "#/definitions/service/definitions/end_date"
+        }
+      }
     }
   },
   "properties": {
@@ -142,6 +220,9 @@
     },
     "prefecture": {
       "$ref": "#/definitions/prefecture"
+    },
+    "service": {
+      "$ref": "#/definitions/service"
     }
   },
   "title": "RDMS's API JSON Schema",

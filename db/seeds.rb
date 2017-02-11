@@ -57,3 +57,19 @@ Prefecture.create(
     { code: '47', code_bo: 47, name: '沖縄県' }
   ]
 )
+Service.create(
+  [
+    {
+      code: 'cat',
+      name: 'にゃあにゃあ',
+      start_date: Date.new(2010, 4, 1),
+      end_date: Date.new(2999, 12, 31)
+    },
+    {
+      code: 'dog',
+      name: 'わんわん',
+      start_date: Date.new(2009, 10, 1),
+      end_date: Date.new(2999, 12, 31)
+    }
+  ]
+)

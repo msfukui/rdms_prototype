@@ -15,13 +15,13 @@ definitions:
     - integer
   name:
     description: unique name of Japanese era
-    example: 明治
+    example: '明治'
     readOnly: true
     type:
     - string
   start_date:
     description: date the era started
-    example: 1868-01-25
+    example: '1868-01-25'
     type:
     - string
   identity:

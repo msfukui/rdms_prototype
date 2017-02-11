@@ -97,3 +97,52 @@ HTTP/1.1 200 OK
 ```
 
 
+## <a name="resource-service">Service</a>
+
+Stability: `prototype`
+
+API to return list of Service code and names, is defined to custom settings.
+
+### Attributes
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **code** | *string* | unique identifier of Service | `"cat"` |
+| **end_date** | *string* | date the service ended | `"2999-12-31"` |
+| **name** | *string* | unique name of Service | `"にゃんにゃん"` |
+| **start_date** | *string* | date the service started | `"2010-03-01"` |
+
+### <a name="link-GET-service-/services">Service List</a>
+
+List existing Service names.
+
+```
+GET /services
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://rdms-prototype.herokuapp.com/services
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+[
+  {
+    "code": "cat",
+    "name": "にゃんにゃん",
+    "start_date": "2010-03-01",
+    "end_date": "2999-12-31"
+  }
+]
+```
+
+

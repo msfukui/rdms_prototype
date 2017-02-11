@@ -21,13 +21,14 @@ definitions:
     - integer
   name:
     description: unique name of Prefecture
-    example: 北海道
+    example: '北海道'
     readOnly: true
     type:
     - string
   identity:
     anyOf:
     - "$ref": "/schemata/prefecture#/definitions/code"
+    - "$ref": "/schemata/prefecture#/definitions/code_bo"
     - "$ref": "/schemata/prefecture#/definitions/name"
 links:
 - description: List existing prefectures.
