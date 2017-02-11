@@ -62,13 +62,37 @@ Service.create(
     {
       code: 'cat',
       name: 'にゃあにゃあ',
-      start_date: Date.new(2010, 4, 1),
+      start_date: Date.new(2012, 2, 1),
+      end_date: Date.new(2999, 12, 31)
+    },
+    {
+      code: 'bigcat',
+      name: 'おおきいにゃあにゃあ',
+      start_date: Date.new(2012, 8, 1),
+      end_date: Date.new(2013, 1, 31)
+    },
+    {
+      code: 'bigcatandcat',
+      name: 'おおきいにゃあにゃあとにゃあにゃあ',
+      start_date: Date.new(2013, 2, 1),
       end_date: Date.new(2999, 12, 31)
     },
     {
       code: 'dog',
       name: 'わんわん',
-      start_date: Date.new(2009, 10, 1),
+      start_date: Date.new(2009, 7, 1),
+      end_date: Date.new(2999, 12, 31)
+    },
+    {
+      code: 'dogplusbv',
+      name: 'わんわん + bv',
+      start_date: Date.new(2013, 3, 1),
+      end_date: Date.new(2999, 12, 31)
+    },
+    {
+      code: 'dog2plus',
+      name: 'わんわん 2+',
+      start_date: Date.new(2013, 10, 31),
       end_date: Date.new(2999, 12, 31)
     }
   ]
