@@ -6,5 +6,9 @@ FactoryGirl.define do
     note 'シャム（シャム猫、シャムネコ、暹羅猫）は、タイ王国原産で短毛種の猫である。'
     start_date Date.new(2013, 2, 1)
     end_date Date.new(2999, 12, 31)
+
+    factory :service_and_plan do
+      association :service, factory: :service
+    end
   end
 end

@@ -256,7 +256,7 @@ Prefecture.create(
   s = Service.create(item[:service])
   s.create_acceptance(item[:acceptance])
   item[:plan].each do |plan|
-    p = Plan.create(plan[:plan])
+    p = s.plans.create(plan[:plan])
     p.create_acceptance(plan[:acceptance])
   end
 end
