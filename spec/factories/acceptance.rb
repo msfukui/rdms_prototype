@@ -8,5 +8,9 @@ FactoryGirl.define do
     factory :service_and_acceptance do
       association :acceptable, factory: :service
     end
+
+    factory :plan_and_acceptance do
+      association :acceptable, factory: :plan
+    end
   end
 end
