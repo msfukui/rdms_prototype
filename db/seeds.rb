@@ -72,7 +72,8 @@ Prefecture.create(
       context: 'new',
       start_date: Date.new(2012, 2, 1),
       end_date: Date.new(2013, 1, 31)
-    }
+    },
+    plan: []
   },
   {
     service:
@@ -88,7 +89,8 @@ Prefecture.create(
       context: 'new',
       start_date: Date.new(2012, 8, 1),
       end_date: Date.new(2013, 1, 31)
-    }
+    },
+    plan: []
   },
   {
     service:
@@ -104,7 +106,34 @@ Prefecture.create(
       context: 'new',
       start_date: Date.new(2013, 2, 1),
       end_date: Date.new(2999, 12, 31)
-    }
+    },
+    plan:
+    [
+      {
+        code: 'siamese',
+        code_bo: 'syamu',
+        name: 'シャム',
+        note: 'シャム（シャム猫、シャムネコ、暹羅猫）は、タイ王国原産で短毛種の猫である。',
+        start_date: Date.new(2013, 2, 1),
+        end_date: Date.new(2999, 12, 31)
+      },
+      {
+        code: 'persian',
+        code_bo: 'perusya',
+        name: 'ペルシャ',
+        note: 'ペルシャ（英：Persian）は、ネコの品種の一つ。ペルシャ猫。16世紀後半イタリアに渡来。 長毛種の代表的な品種で、古くからショーキャットとして認められる品種の一つである。',
+        start_date: Date.new(2013, 2, 1),
+        end_date: Date.new(2999, 12, 31)
+      },
+      {
+        code: 'calico',
+        code_bo: 'mike',
+        name: '三毛',
+        note: '三毛猫（みけねこ）とは、3色の毛が生えている猫の総称。単に三毛（みけ）とも言う。',
+        start_date: Date.new(2013, 2, 1),
+        end_date: Date.new(2999, 12, 31)
+      }
+    ]
   },
   {
     service:
@@ -120,7 +149,8 @@ Prefecture.create(
       context: 'new',
       start_date: Date.new(2009, 7, 1),
       end_date: Date.new(2015, 9, 30)
-    }
+    },
+    plan: []
   },
   {
     service:
@@ -136,7 +166,8 @@ Prefecture.create(
       context: 'new',
       start_date: Date.new(2013, 3, 1),
       end_date: Date.new(2016, 5, 31)
-    }
+    },
+    plan: []
   },
   {
     service:
@@ -152,9 +183,32 @@ Prefecture.create(
       context: 'new',
       start_date: Date.new(2013, 10, 31),
       end_date: Date.new(2999, 12, 31)
-    }
+    },
+    plan: [
+      {
+        code: 'american_cocker_spaniel',
+        code_bo: 'amerikan_kokka_spanieru',
+        name: 'アメリカン・コッカー・スパニエル',
+        note: 'アメリカン・コッカー・スパニエル（American Cocker Spaniel）は、犬の品種（犬種）の一つ。単にコッカー・スパニエルと呼ばれることも多い。',
+        start_date: Date.new(2013, 10, 31),
+        end_date: Date.new(2999, 12, 31)
+      },
+      {
+        code: 'siberian_husky',
+        code_bo: 'chobi',
+        name: 'シベリアン・ハスキー',
+        note: 'シベリアン・ハスキーは、犬種の一つ。',
+        start_date: Date.new(2013, 10, 31),
+        end_date: Date.new(2999, 12, 31)
+      }
+    ]
   }
 ].each do |item|
   s = Service.create(item[:service])
+
   s.create_acceptance(item[:acceptance])
+
+  item[:plan].each do |plan|
+    Plan.create(plan)
+  end
 end
