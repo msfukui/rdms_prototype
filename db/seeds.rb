@@ -87,11 +87,51 @@ Service.create(
       code: 'dogplusbv',
       name: 'わんわん + bv',
       start_date: Date.new(2013, 3, 1),
-      end_date: Date.new(2999, 12, 31)
+      end_date: Date.new(2017, 3, 31)
     },
     {
       code: 'dog2plus',
       name: 'わんわん 2+',
+      start_date: Date.new(2013, 10, 31),
+      end_date: Date.new(2999, 12, 31)
+    }
+  ]
+)
+Acceptance.create(
+  [
+    {
+      code: 'cat',
+      context: 'new',
+      start_date: Date.new(2012, 2, 1),
+      end_date: Date.new(2013, 1, 31)
+    },
+    {
+      code: 'bigcat',
+      context: 'new',
+      start_date: Date.new(2012, 8, 1),
+      end_date: Date.new(2013, 1, 31)
+    },
+    {
+      code: 'bigcatandcat',
+      context: 'new',
+      start_date: Date.new(2013, 2, 1),
+      end_date: Date.new(2999, 12, 31)
+    },
+    {
+      code: 'dog',
+      context: 'new',
+      start_date: Date.new(2009, 7, 1),
+      end_date: Date.new(2015, 9, 30)
+    },
+    {
+      code: 'dogplusbv',
+      context: 'new',
+      start_date: Date.new(2013, 3, 1),
+      end_date: Date.new(2016, 5, 31)
+    },
+    {
+      code: 'dog2plus',
+      context: 'new',
       start_date: Date.new(2013, 10, 31),
       end_date: Date.new(2999, 12, 31)
     }
