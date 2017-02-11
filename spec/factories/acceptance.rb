@@ -4,6 +4,9 @@ FactoryGirl.define do
     context 'new'
     start_date Date.new(2012, 2, 1)
     end_date Date.new(2013, 1, 31)
-    association :acceptable, factory: :service
+
+    factory :service_and_acceptance do
+      association :acceptable, factory: :service
+    end
   end
 end

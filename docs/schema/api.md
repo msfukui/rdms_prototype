@@ -3,6 +3,13 @@
 In this schema file, we represents the public interface of Resource Data Management System's API in JSON Hyper Schema draft v4.
 
 
+## <a name="resource-acceptance">Acceptance</a>
+
+Stability: `prototype`
+
+Provide information on acceptability of each use case related to linked items.
+
+
 ## <a name="resource-ja_era">JaEra</a>
 
 Stability: `prototype`
@@ -101,12 +108,15 @@ HTTP/1.1 200 OK
 
 Stability: `prototype`
 
-API to return list of Service code and names, is defined to custom settings.
+API to return list of Service code, names and more that is defined to custom settings.
 
 ### Attributes
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
+| **[acceptance:context](#resource-acceptance)** | *string* | Use Case of Acceptance.('new', ..) | `"new"` |
+| **[acceptance:end_date](#resource-acceptance)** | *string* | date the definitions ended | `"2999-12-31"` |
+| **[acceptance:start_date](#resource-acceptance)** | *string* | date the definitions started | `"2010-03-01"` |
 | **code** | *string* | unique identifier of Service | `"cat"` |
 | **end_date** | *string* | date the service ended | `"2999-12-31"` |
 | **name** | *string* | unique name of Service | `"にゃんにゃん"` |
@@ -140,7 +150,12 @@ HTTP/1.1 200 OK
     "code": "cat",
     "name": "にゃんにゃん",
     "start_date": "2010-03-01",
-    "end_date": "2999-12-31"
+    "end_date": "2999-12-31",
+    "acceptance": {
+      "context": "new",
+      "start_date": "2010-03-01",
+      "end_date": "2999-12-31"
+    }
   }
 ]
 ```

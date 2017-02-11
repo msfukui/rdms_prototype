@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Services', type: :request do
   describe 'GET /services' do
     before do
-      create(:service)
+      create(:service_and_acceptance)
       get services_path
     end
 
@@ -17,7 +17,12 @@ RSpec.describe 'Services', type: :request do
           code: 'cat',
           name: 'にゃんにゃん',
           start_date: '2012-02-01',
-          end_date: '2999-12-31'
+          end_date: '2999-12-31',
+          acceptance: {
+            context: 'new',
+            start_date: '2012-02-01',
+            end_date: '2013-01-31'
+          }
         ]
       )
     end

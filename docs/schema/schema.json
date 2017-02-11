@@ -4,6 +4,69 @@
     "object"
   ],
   "definitions": {
+    "acceptance": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Acceptance",
+      "description": "Provide information on acceptability of each use case related to linked items.",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "acceptable_id": {
+          "description": "id that related to linked items",
+          "example": 1,
+          "readOnly": true,
+          "type": [
+            "integer"
+          ]
+        },
+        "acceptable_type": {
+          "description": "type that related to linked items('Service', ..)",
+          "example": "Service",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "context": {
+          "description": "Use Case of Acceptance.('new', ..)",
+          "example": "new",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "start_date": {
+          "description": "date the definitions started",
+          "example": "2010-03-01",
+          "type": [
+            "string"
+          ]
+        },
+        "end_date": {
+          "description": "date the definitions ended",
+          "example": "2999-12-31",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/acceptance/definitions/acceptable_id"
+            },
+            {
+              "$ref": "#/definitions/acceptance/definitions/acceptable_type"
+            },
+            {
+              "$ref": "#/definitions/acceptance/definitions/context"
+            }
+          ]
+        }
+      }
+    },
     "ja_era": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
       "title": "JaEra",
@@ -141,7 +204,7 @@
     "service": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
       "title": "Service",
-      "description": "API to return list of Service code and names, is defined to custom settings.",
+      "description": "API to return list of Service code, names and more that is defined to custom settings.",
       "stability": "prototype",
       "strictProperties": true,
       "type": [
@@ -210,11 +273,30 @@
         },
         "end_date": {
           "$ref": "#/definitions/service/definitions/end_date"
+        },
+        "acceptance": {
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "context": {
+              "$ref": "#/definitions/acceptance/definitions/context"
+            },
+            "start_date": {
+              "$ref": "#/definitions/acceptance/definitions/start_date"
+            },
+            "end_date": {
+              "$ref": "#/definitions/acceptance/definitions/end_date"
+            }
+          }
         }
       }
     }
   },
   "properties": {
+    "acceptance": {
+      "$ref": "#/definitions/acceptance"
+    },
     "ja_era": {
       "$ref": "#/definitions/ja_era"
     },

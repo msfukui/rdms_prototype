@@ -17,7 +17,7 @@ namespace :schema do
 
   Prmd::RakeTasks::Doc.new do |t|
     t.options[:prepend] = ["#{schema_root}/overview.md"]
-    t.files = { "#{schema_root}/schema.json" => "#{schema_root}/schema.md" }
+    t.files = { "#{schema_root}/schema.json" => "#{schema_root}/api.md" }
   end
 end
 

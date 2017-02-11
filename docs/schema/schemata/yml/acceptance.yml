@@ -1,0 +1,37 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: Acceptance
+description: Provide information on acceptability of each use case related to linked items.
+stability: prototype
+strictProperties: true
+type: object
+definitions:
+  acceptable_id:
+    description: id that related to linked items
+    example: 1
+    readOnly: true
+    type: integer
+  acceptable_type:
+    description: "type that related to linked items('Service', ..)"
+    example: Service
+    readOnly: true
+    type: string
+  context:
+    description: "Use Case of Acceptance.('new', ..)"
+    example: new
+    readOnly: true
+    type: string
+  start_date:
+    description: date the definitions started
+    example: '2010-03-01'
+    type: string
+  end_date:
+    description: date the definitions ended
+    example: '2999-12-31'
+    type: string
+  identity:
+    allOf:
+      - "$ref": "/schemata/acceptance#/definitions/acceptable_id"
+      - "$ref": "/schemata/acceptance#/definitions/acceptable_type"
+      - "$ref": "/schemata/acceptance#/definitions/context"
+id: schemata/acceptance
