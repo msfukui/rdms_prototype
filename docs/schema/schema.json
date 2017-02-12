@@ -4,6 +4,69 @@
     "object"
   ],
   "definitions": {
+    "acceptance": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Acceptance",
+      "description": "Provide information on acceptability of each use case related to linked items.",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "acceptable_id": {
+          "description": "id that related to linked items",
+          "example": 1,
+          "readOnly": true,
+          "type": [
+            "integer"
+          ]
+        },
+        "acceptable_type": {
+          "description": "type that related to linked items ('Service', ..)",
+          "example": "Service",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "context": {
+          "description": "Use Case of Acceptance ('new', ..)",
+          "example": "new",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "start_date": {
+          "description": "date the definitions started",
+          "example": "2010-03-01",
+          "type": [
+            "string"
+          ]
+        },
+        "end_date": {
+          "description": "date the definitions ended",
+          "example": "2999-12-31",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/acceptance/definitions/acceptable_id"
+            },
+            {
+              "$ref": "#/definitions/acceptance/definitions/acceptable_type"
+            },
+            {
+              "$ref": "#/definitions/acceptance/definitions/context"
+            }
+          ]
+        }
+      }
+    },
     "ja_era": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
       "title": "JaEra",
@@ -69,6 +132,77 @@
         }
       }
     },
+    "plan": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Plan",
+      "description": "API to return list of Plan code, names and more.",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "code": {
+          "description": "unique identifier of Plan",
+          "example": "siamese",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "code_bo": {
+          "description": "unique identifier of Plan, using bo",
+          "example": "syamu-neko",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of Plan",
+          "example": "シャム",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "note": {
+          "description": "a note of Plan",
+          "example": "シャム（シャム猫、シャムネコ、暹羅猫）は、タイ王国原産で短毛種の猫である。",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "start_date": {
+          "description": "date the plan started",
+          "example": "2010-03-01",
+          "type": [
+            "string"
+          ]
+        },
+        "end_date": {
+          "description": "date the plan ended",
+          "example": "2999-12-31",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/plan/definitions/code"
+            },
+            {
+              "$ref": "#/definitions/plan/definitions/code_bo"
+            },
+            {
+              "$ref": "#/definitions/plan/definitions/name"
+            }
+          ]
+        }
+      }
+    },
     "prefecture": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
       "title": "Prefecture",
@@ -80,7 +214,7 @@
       ],
       "definitions": {
         "code": {
-          "description": "unique identifier of Prefecture.",
+          "description": "unique identifier of Prefecture",
           "example": "01",
           "readOnly": true,
           "type": [
@@ -88,7 +222,7 @@
           ]
         },
         "code_bo": {
-          "description": "unique identifier of Prefecture, using bo.",
+          "description": "unique identifier of Prefecture, using bo",
           "example": 1,
           "readOnly": true,
           "type": [
@@ -107,6 +241,9 @@
           "anyOf": [
             {
               "$ref": "#/definitions/prefecture/definitions/code"
+            },
+            {
+              "$ref": "#/definitions/prefecture/definitions/code_bo"
             },
             {
               "$ref": "#/definitions/prefecture/definitions/name"
@@ -134,14 +271,160 @@
           "$ref": "#/definitions/prefecture/definitions/name"
         }
       }
+    },
+    "service": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Service",
+      "description": "API to return list of Service code, names and more that is defined to custom settings.",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "code": {
+          "description": "unique identifier of Service",
+          "example": "cat",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of Service",
+          "example": "にゃんにゃん",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "start_date": {
+          "description": "date the service started",
+          "example": "2010-03-01",
+          "type": [
+            "string"
+          ]
+        },
+        "end_date": {
+          "description": "date the service ended",
+          "example": "2999-12-31",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/service/definitions/code"
+            },
+            {
+              "$ref": "#/definitions/service/definitions/name"
+            }
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "List existing Service names.",
+          "href": "/services",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        }
+      ],
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/service/definitions/code"
+        },
+        "name": {
+          "$ref": "#/definitions/service/definitions/name"
+        },
+        "start_date": {
+          "$ref": "#/definitions/service/definitions/start_date"
+        },
+        "end_date": {
+          "$ref": "#/definitions/service/definitions/end_date"
+        },
+        "acceptance": {
+          "type": [
+            "object"
+          ],
+          "properties": {
+            "context": {
+              "$ref": "#/definitions/acceptance/definitions/context"
+            },
+            "start_date": {
+              "$ref": "#/definitions/acceptance/definitions/start_date"
+            },
+            "end_date": {
+              "$ref": "#/definitions/acceptance/definitions/end_date"
+            }
+          }
+        },
+        "plans": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "object"
+            ],
+            "properties": {
+              "code": {
+                "$ref": "#/definitions/plan/definitions/code"
+              },
+              "code_bo": {
+                "$ref": "#/definitions/plan/definitions/code_bo"
+              },
+              "name": {
+                "$ref": "#/definitions/plan/definitions/name"
+              },
+              "note": {
+                "$ref": "#/definitions/plan/definitions/note"
+              },
+              "start_date": {
+                "$ref": "#/definitions/plan/definitions/start_date"
+              },
+              "end_date": {
+                "$ref": "#/definitions/plan/definitions/end_date"
+              },
+              "acceptance": {
+                "type": [
+                  "object"
+                ],
+                "properties": {
+                  "context": {
+                    "$ref": "#/definitions/acceptance/definitions/context"
+                  },
+                  "start_date": {
+                    "$ref": "#/definitions/acceptance/definitions/start_date"
+                  },
+                  "end_date": {
+                    "$ref": "#/definitions/acceptance/definitions/end_date"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "properties": {
+    "acceptance": {
+      "$ref": "#/definitions/acceptance"
+    },
     "ja_era": {
       "$ref": "#/definitions/ja_era"
     },
+    "plan": {
+      "$ref": "#/definitions/plan"
+    },
     "prefecture": {
       "$ref": "#/definitions/prefecture"
+    },
+    "service": {
+      "$ref": "#/definitions/service"
     }
   },
   "title": "RDMS's API JSON Schema",

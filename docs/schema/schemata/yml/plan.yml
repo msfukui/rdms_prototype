@@ -1,0 +1,42 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: Plan
+description: API to return list of Plan code, names and more.
+stability: prototype
+strictProperties: true
+type: object
+definitions:
+  code:
+    description: unique identifier of Plan
+    example: 'siamese'
+    readOnly: true
+    type: string
+  code_bo:
+    description: unique identifier of Plan, using bo
+    example: 'syamu-neko'
+    readOnly: true
+    type: string
+  name:
+    description: unique name of Plan
+    example: 'シャム'
+    readOnly: true
+    type: string
+  note:
+    description: a note of Plan
+    example: 'シャム（シャム猫、シャムネコ、暹羅猫）は、タイ王国原産で短毛種の猫である。'
+    readOnly: true
+    type: string
+  start_date:
+    description: date the plan started
+    example: '2010-03-01'
+    type: string
+  end_date:
+    description: date the plan ended
+    example: '2999-12-31'
+    type: string
+  identity:
+    anyOf:
+      - "$ref": "/schemata/plan#/definitions/code"
+      - "$ref": "/schemata/plan#/definitions/code_bo"
+      - "$ref": "/schemata/plan#/definitions/name"
+id: schemata/plan

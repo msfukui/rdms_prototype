@@ -4,31 +4,28 @@ title: Prefecture
 description: API to return list of Prefecture code and names set. (JISX0401)
 stability: prototype
 strictProperties: true
-type:
-- object
+type: object
 definitions:
   code:
-    description: unique identifier of Prefecture.
+    description: unique identifier of Prefecture
     example: '01'
     readOnly: true
-    type:
-    - string
+    type: string
   code_bo:
-    description: unique identifier of Prefecture, using bo.
+    description: unique identifier of Prefecture, using bo
     example: 1
     readOnly: true
-    type:
-    - integer
+    type: integer
   name:
     description: unique name of Prefecture
-    example: 北海道
+    example: '北海道'
     readOnly: true
-    type:
-    - string
+    type: string
   identity:
     anyOf:
-    - "$ref": "/schemata/prefecture#/definitions/code"
-    - "$ref": "/schemata/prefecture#/definitions/name"
+      - "$ref": "/schemata/prefecture#/definitions/code"
+      - "$ref": "/schemata/prefecture#/definitions/code_bo"
+      - "$ref": "/schemata/prefecture#/definitions/name"
 links:
 - description: List existing prefectures.
   href: "/prefectures"

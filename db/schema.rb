@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130130418) do
+ActiveRecord::Schema.define(version: 20170211144629) do
+
+  create_table "acceptances", force: :cascade do |t|
+    t.string   "code"
+    t.string   "context"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "acceptable_type"
+    t.integer  "acceptable_id"
+    t.index ["acceptable_type", "acceptable_id"], name: "index_acceptances_on_acceptable_type_and_acceptable_id"
+  end
 
   create_table "ja_eras", force: :cascade do |t|
     t.integer  "code"
@@ -20,10 +32,32 @@ ActiveRecord::Schema.define(version: 20170130130418) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "plans", force: :cascade do |t|
+    t.string   "code"
+    t.string   "code_bo"
+    t.string   "name"
+    t.string   "note"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "service_id"
+    t.index ["service_id"], name: "index_plans_on_service_id"
+  end
+
   create_table "prefectures", force: :cascade do |t|
     t.string   "code"
     t.integer  "code_bo"
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "code"
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

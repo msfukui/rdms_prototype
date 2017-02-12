@@ -10,6 +10,10 @@ Resource Data Management System.
 
 (Alphalpha prototype product.)
 
+* Documentation
+
+[[API's Document](https://github.com/msfukui/rdms_prototype/tree/master/docs/schema/api.md)]
+
 * How to run the test suite
 
 ```

@@ -18,7 +18,7 @@ module RdmsPrototype
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
 
-    json_schema_file = "#{Rails.root}/docs/schema/schemata/schema.json"
+    json_schema_file = "#{Rails.root}/docs/schema/schema.json"
 
     if File.exist?(json_schema_file)
       schema = JSON.parse(File.read(json_schema_file))
