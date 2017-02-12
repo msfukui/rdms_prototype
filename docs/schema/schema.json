@@ -23,7 +23,7 @@
           ]
         },
         "acceptable_type": {
-          "description": "type that related to linked items('Service', ..)",
+          "description": "type that related to linked items ('Service', ..)",
           "example": "Service",
           "readOnly": true,
           "type": [
@@ -31,7 +31,7 @@
           ]
         },
         "context": {
-          "description": "Use Case of Acceptance.('new', ..)",
+          "description": "Use Case of Acceptance ('new', ..)",
           "example": "new",
           "readOnly": true,
           "type": [
@@ -132,6 +132,77 @@
         }
       }
     },
+    "plan": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Plan",
+      "description": "API to return list of Plan code, names and more.",
+      "stability": "prototype",
+      "strictProperties": true,
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "code": {
+          "description": "unique identifier of Plan",
+          "example": "siamese",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "code_bo": {
+          "description": "unique identifier of Plan, using bo",
+          "example": "syamu-neko",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of Plan",
+          "example": "シャム",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "note": {
+          "description": "a note of Plan",
+          "example": "シャム（シャム猫、シャムネコ、暹羅猫）は、タイ王国原産で短毛種の猫である。",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "start_date": {
+          "description": "date the plan started",
+          "example": "2010-03-01",
+          "type": [
+            "string"
+          ]
+        },
+        "end_date": {
+          "description": "date the plan ended",
+          "example": "2999-12-31",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/plan/definitions/code"
+            },
+            {
+              "$ref": "#/definitions/plan/definitions/code_bo"
+            },
+            {
+              "$ref": "#/definitions/plan/definitions/name"
+            }
+          ]
+        }
+      }
+    },
     "prefecture": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
       "title": "Prefecture",
@@ -143,7 +214,7 @@
       ],
       "definitions": {
         "code": {
-          "description": "unique identifier of Prefecture.",
+          "description": "unique identifier of Prefecture",
           "example": "01",
           "readOnly": true,
           "type": [
@@ -151,7 +222,7 @@
           ]
         },
         "code_bo": {
-          "description": "unique identifier of Prefecture, using bo.",
+          "description": "unique identifier of Prefecture, using bo",
           "example": 1,
           "readOnly": true,
           "type": [
@@ -289,6 +360,52 @@
               "$ref": "#/definitions/acceptance/definitions/end_date"
             }
           }
+        },
+        "plans": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "object"
+            ],
+            "properties": {
+              "code": {
+                "$ref": "#/definitions/plan/definitions/code"
+              },
+              "code_bo": {
+                "$ref": "#/definitions/plan/definitions/code_bo"
+              },
+              "name": {
+                "$ref": "#/definitions/plan/definitions/name"
+              },
+              "note": {
+                "$ref": "#/definitions/plan/definitions/note"
+              },
+              "start_date": {
+                "$ref": "#/definitions/plan/definitions/start_date"
+              },
+              "end_date": {
+                "$ref": "#/definitions/plan/definitions/end_date"
+              },
+              "acceptance": {
+                "type": [
+                  "object"
+                ],
+                "properties": {
+                  "context": {
+                    "$ref": "#/definitions/acceptance/definitions/context"
+                  },
+                  "start_date": {
+                    "$ref": "#/definitions/acceptance/definitions/start_date"
+                  },
+                  "end_date": {
+                    "$ref": "#/definitions/acceptance/definitions/end_date"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -299,6 +416,9 @@
     },
     "ja_era": {
       "$ref": "#/definitions/ja_era"
+    },
+    "plan": {
+      "$ref": "#/definitions/plan"
     },
     "prefecture": {
       "$ref": "#/definitions/prefecture"

@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
   def index
     @services = Service.all
-    render json: @services
+    render json: @services, include: [:acceptance, { plans: [:acceptance] }]
   end
 
   private

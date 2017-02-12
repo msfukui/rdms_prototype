@@ -7,12 +7,12 @@ strictProperties: true
 type: object
 definitions:
   code:
-    description: unique identifier of Prefecture.
+    description: unique identifier of Prefecture
     example: '01'
     readOnly: true
     type: string
   code_bo:
-    description: unique identifier of Prefecture, using bo.
+    description: unique identifier of Prefecture, using bo
     example: 1
     readOnly: true
     type: integer

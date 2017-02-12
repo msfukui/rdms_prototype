@@ -12,12 +12,12 @@ definitions:
     readOnly: true
     type: integer
   acceptable_type:
-    description: "type that related to linked items('Service', ..)"
+    description: "type that related to linked items ('Service', ..)"
     example: Service
     readOnly: true
     type: string
   context:
-    description: "Use Case of Acceptance.('new', ..)"
+    description: "Use Case of Acceptance ('new', ..)"
     example: new
     readOnly: true
     type: string

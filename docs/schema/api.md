@@ -57,6 +57,13 @@ HTTP/1.1 200 OK
 ```
 
 
+## <a name="resource-plan">Plan</a>
+
+Stability: `prototype`
+
+API to return list of Plan code, names and more.
+
+
 ## <a name="resource-prefecture">Prefecture</a>
 
 Stability: `prototype`
@@ -67,8 +74,8 @@ API to return list of Prefecture code and names set. (JISX0401)
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
-| **code** | *string* | unique identifier of Prefecture. | `"01"` |
-| **code_bo** | *integer* | unique identifier of Prefecture, using bo. | `1` |
+| **code** | *string* | unique identifier of Prefecture | `"01"` |
+| **code_bo** | *integer* | unique identifier of Prefecture, using bo | `1` |
 | **name** | *string* | unique name of Prefecture | `"北海道"` |
 
 ### <a name="link-GET-prefecture-/prefectures">Prefecture List</a>
@@ -114,12 +121,21 @@ API to return list of Service code, names and more that is defined to custom set
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
-| **[acceptance:context](#resource-acceptance)** | *string* | Use Case of Acceptance.('new', ..) | `"new"` |
+| **[acceptance:context](#resource-acceptance)** | *string* | Use Case of Acceptance ('new', ..) | `"new"` |
 | **[acceptance:end_date](#resource-acceptance)** | *string* | date the definitions ended | `"2999-12-31"` |
 | **[acceptance:start_date](#resource-acceptance)** | *string* | date the definitions started | `"2010-03-01"` |
 | **code** | *string* | unique identifier of Service | `"cat"` |
 | **end_date** | *string* | date the service ended | `"2999-12-31"` |
 | **name** | *string* | unique name of Service | `"にゃんにゃん"` |
+| **[plans/acceptance:context](#resource-acceptance)** | *string* | Use Case of Acceptance ('new', ..) | `"new"` |
+| **[plans/acceptance:end_date](#resource-acceptance)** | *string* | date the definitions ended | `"2999-12-31"` |
+| **[plans/acceptance:start_date](#resource-acceptance)** | *string* | date the definitions started | `"2010-03-01"` |
+| **[plans/code](#resource-plan)** | *string* | unique identifier of Plan | `"siamese"` |
+| **[plans/code_bo](#resource-plan)** | *string* | unique identifier of Plan, using bo | `"syamu-neko"` |
+| **[plans/end_date](#resource-plan)** | *string* | date the plan ended | `"2999-12-31"` |
+| **[plans/name](#resource-plan)** | *string* | unique name of Plan | `"シャム"` |
+| **[plans/note](#resource-plan)** | *string* | a note of Plan | `"シャム（シャム猫、シャムネコ、暹羅猫）は、タイ王国原産で短毛種の猫である。"` |
+| **[plans/start_date](#resource-plan)** | *string* | date the plan started | `"2010-03-01"` |
 | **start_date** | *string* | date the service started | `"2010-03-01"` |
 
 ### <a name="link-GET-service-/services">Service List</a>
@@ -155,7 +171,22 @@ HTTP/1.1 200 OK
       "context": "new",
       "start_date": "2010-03-01",
       "end_date": "2999-12-31"
-    }
+    },
+    "plans": [
+      {
+        "code": "siamese",
+        "code_bo": "syamu-neko",
+        "name": "シャム",
+        "note": "シャム（シャム猫、シャムネコ、暹羅猫）は、タイ王国原産で短毛種の猫である。",
+        "start_date": "2010-03-01",
+        "end_date": "2999-12-31",
+        "acceptance": {
+          "context": "new",
+          "start_date": "2010-03-01",
+          "end_date": "2999-12-31"
+        }
+      }
+    ]
   }
 ]
 ```

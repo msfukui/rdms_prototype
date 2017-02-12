@@ -52,4 +52,30 @@ properties:
         "$ref": "/schemata/acceptance#/definitions/start_date"
       end_date:
         "$ref": "/schemata/acceptance#/definitions/end_date"
+  plans:
+    type: array
+    items:
+      type: object
+      properties:
+        code:
+          "$ref": "/schemata/plan#/definitions/code"
+        code_bo:
+          "$ref": "/schemata/plan#/definitions/code_bo"
+        name:
+          "$ref": "/schemata/plan#/definitions/name"
+        note:
+          "$ref": "/schemata/plan#/definitions/note"
+        start_date:
+          "$ref": "/schemata/plan#/definitions/start_date"
+        end_date:
+          "$ref": "/schemata/plan#/definitions/end_date"
+        acceptance:
+          type: object
+          properties:
+            context:
+              "$ref": "/schemata/acceptance#/definitions/context"
+            start_date:
+              "$ref": "/schemata/acceptance#/definitions/start_date"
+            end_date:
+              "$ref": "/schemata/acceptance#/definitions/end_date"
 id: schemata/service
